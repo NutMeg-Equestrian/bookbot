@@ -36,4 +36,27 @@ def sorted_character_list_of_dictionaries(d):
     return list_of_dictionaries
 
 
+def word_appearance_count(book_text):
+    all_words = book_text.split()
+    all_words_lower = all_words.lower()
+    word_count = {}
+    
+    for word in all_words_lower:
+        if word not in word_count:
+            word_count[word] = 1
+        else:
+            word_count[word] += 1
+    return word_count
+
+def sorted_word_usage_list_of_dictionaries(d):
+    list_of_dictionaries = []
+    new_dictionary = {}
+    
+    for key in d:
+        new_dictionary = {"word":key, "num":d[key]}
+        list_of_dictionaries.append(new_dictionary)
+        
+    list_of_dictionaries.sort(reverse=False,key=sort_on)
+    
+    return list_of_dictionaries
     
